@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SSP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<style>
+    body {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container {
+        margin-top: 100px;
+        display: inline-block;
+        margin: 0 auto;
+        /* display: flex;
+        justify-content: center; */
+        margin-top: 200px;
+        background-color: #efefef;
+        position: relative;
+        padding:10px 20px 20px 20px;
+    }
+    .container .heading {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .container .gauge-container {
+        margin: 0px;
+        display: inline-block;
+        position: relative;
+        margin-left: 50px
+    }
+
+    .container .gauge-container .value {
+        position: absolute;
+        top: 150px;
+        width: 100%;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .container .gauge-container .action {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .container .gauge-container label {
+        margin-top: 15px;
+        text-align: center;
+        font-weight: normal;
+        
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="heading">Alarm Metrics Monthly &nbsp; &nbsp; Area: Unresolved Area</div>
+        <div class="gauge-container">
+            <div class="value" id="value-display-chart0"></div>
+            <canvas id="chart0"></canvas>
+            <div class="label">
+                <label>Avg Alarms Per 10 Min</label>
+            </div>
+            <div class="action">
+                <input type="number" min="0.0" max="4.0" id="value-chart0" />
+                <button class="set" name="chart0">Set</button>
+            </div>
+        </div>
+        <div class="gauge-container">
+            <div class="value" id="value-display-chart1"></div>
+            <canvas id="chart1"></canvas>
+            <div class="label">
+                <label>Peak Alarms per 10 Min</label>
+            </div>
+            <div class="action">
+                <input type="number" min="0" max="28" id="value-chart1" />
+                <button class="set" name="chart1">Set</button>
+            </div>
+        </div>
+
+        <div class="gauge-container">
+            <div class="value" id="value-display-chart2"></div>
+            <canvas id="chart2"></canvas>
+            <div class="label">
+                <label>% Time in flood</label>
+            </div>
+            <div class="action">
+                <input type="number" min="0" max="14" id="value-chart2" />
+                <button class="set" name="chart2">Set</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="gauge.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
